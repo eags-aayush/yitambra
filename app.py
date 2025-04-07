@@ -19,7 +19,7 @@ def home():
     return send_file("index.html")
 
 def run_web():
-    web_app.run(host="0.0.0.0", port=3000)
+    web_app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 # Start Flask server in a separate thread
 threading.Thread(target=run_web).start()
